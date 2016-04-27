@@ -1,0 +1,55 @@
+<html>
+<head>
+  <title>Slick Slideshow Test</title>
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="slick.js"></script>
+  <link rel="stylesheet" type="text/css" href="slick.css">
+  <link rel="stylesheet" type="text/css" href="slick-theme.css">
+  <style type="text/css">
+    .slideshow {
+      background: #fcfcfc;
+      border: 1px solid #dedede;
+      margin: 0 auto;
+      padding: 10px;
+      width: 60%;
+    }
+    .slick-slide {
+      background: #efefef;
+      border: 1px solid #ccc;
+      color: #000;
+      margin-right: 20px;
+      padding: 20px;
+      text-align: center;
+      width: 150px;
+      height: 80px;
+    }
+    .slick-slide:first-of-type {
+      margin-left: 0;
+    }
+    .slick-slide:last-of-type {
+      margin-right: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow slideshow-centermode-noninfinite">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      $('.slideshow-centermode-noninfinite').slick({
+        arrows: true,
+        dots: true,
+        infinite: false,
+        centerMode: true,
+        slidesToShow: 1,
+        noOutsideMargins: true
+      });
+    });
+  </script>
+</body>
+</html>
