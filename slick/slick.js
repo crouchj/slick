@@ -1109,6 +1109,18 @@
             _.slideOffset += _.slideWidth * Math.floor(_.options.slidesToShow / 2);
         }
 
+        if (_.options.noOutsideMargins === true && _.options.centerMode === true && _.options.slidesToShow === 1) {
+            _.slideOffset = 0;
+            _.paddingOffset = parseFloat(_.options.centerPadding.split('px')[0]);
+            if (slideIndex === 0) {
+                _.slideOffset -= _.paddingOffset;
+            } else if (slideIndex === _.slideCount-1) {
+                _.slideOffset += _.slideWidth * Math.floor(_.options.slidesToShow / 2) + _.paddingOffset + (_.paddingOffset / 2.5);
+            } else {
+                _.slideOffset += _.slideWidth * Math.floor(_.options.slidesToShow / 2) + (_.paddingOffset / 5);
+            }
+        }
+
         if (_.options.vertical === false) {
             targetLeft = ((slideIndex * _.slideWidth) * -1) + _.slideOffset;
         } else {
